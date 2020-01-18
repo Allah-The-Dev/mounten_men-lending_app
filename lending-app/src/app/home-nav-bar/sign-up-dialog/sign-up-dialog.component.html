@@ -4,28 +4,38 @@
         <mat-form-field class="fullwidth">
             <input matInput placeholder="Full Name" id="userName" type="text"
                 [(ngModel)]="userDetails.userName" 
-                name="firstname">
+                name="firstname"
+                required>
         </mat-form-field>
         <mat-form-field class="fullwidth">
             <input matInput placeholder="Email" id="email" type="email"
-                [(ngModel)]="userDetails.email" name="email">
+                [(ngModel)]="userDetails.email" 
+                name="email"
+                required>
         </mat-form-field>
         <mat-form-field class="fullwidth">
             <input matInput placeholder="Contact Number" id="contactNo" type="number"
-                [(ngModel)]="userDetails.contactNo" name="contactNo">
+                [(ngModel)]="userDetails.contactNo" 
+                name="contactNo"
+                required>
         </mat-form-field>
         <mat-form-field class="fullwidth">
             <input matInput placeholder="Password" id="password" type="password"
-                [(ngModel)]="userDetails.password" name="password">
+                [(ngModel)]="userDetails.password" 
+                name="password"
+                required>
         </mat-form-field>
         <mat-form-field class="fullwidth">
             <input matInput placeholder="Date Of Birth" id="dob" 
-                [(ngModel)]="userDetails.dob" name="dob">
+                [(ngModel)]="userDetails.dob" 
+                name="dob"
+                required>
         </mat-form-field>
     </form>
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">Cancel</button>
     <button mat-button cdkFocusInitial type="submit"
-        [disabled]="!signUpForm.form.valid">Sign Up</button>
+        [mat-dialog-close]="userDetails"
+        [disabled]="signUpForm.form.invalid">Sign Up</button>
   </div>
