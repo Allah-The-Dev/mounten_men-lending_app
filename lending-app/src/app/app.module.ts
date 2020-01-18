@@ -17,6 +17,11 @@ import { HomeContentComponent } from './home-content/home-content.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminHomeNavBarComponent } from './admin-home-nav-bar/admin-home-nav-bar.component';
+import { SignUpDialogComponent } from './home-nav-bar/sign-up-dialog/sign-up-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material';
+import { FormsModule }   from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +32,7 @@ import { AdminHomeNavBarComponent } from './admin-home-nav-bar/admin-home-nav-ba
     UserHomeComponent,
     AdminHomeComponent,
     AdminHomeNavBarComponent
+    SignUpDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +44,13 @@ import { AdminHomeNavBarComponent } from './admin-home-nav-bar/admin-home-nav-ba
     MatIconModule,
     MatButtonModule,
     FlexLayoutModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[SignUpDialogComponent]
 })
 export class AppModule { }
