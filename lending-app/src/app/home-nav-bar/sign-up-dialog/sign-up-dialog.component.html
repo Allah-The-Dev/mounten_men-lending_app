@@ -36,6 +36,6 @@
 <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">Cancel</button>
     <button mat-button cdkFocusInitial type="submit"
-        [mat-dialog-close]="userDetails"
+        (click)="registerNewUser(userDetails)"
         [disabled]="signUpForm.form.invalid">Sign Up</button>
-  </div>
+ </div>
