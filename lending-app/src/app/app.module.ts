@@ -11,7 +11,9 @@ import { MatToolbarModule,
     MatListModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule } from '@angular/material';
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeContentComponent } from './home-content/home-content.component';
 import { UserHomeComponent } from './user-home/user-home.component';
@@ -49,9 +51,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatDialogModule,
     MatInputModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [MatDatepickerModule],
   bootstrap: [AppComponent],
   entryComponents:[SignUpDialogComponent]
 })

@@ -3,31 +3,31 @@
     <form class="formwidth" (ngSubmit)="onSubmit()" #signUpForm="ngForm">
         <mat-form-field class="fullwidth">
             <input matInput placeholder="Full Name" id="userName" type="text"
-                [(ngModel)]="userDetails.userName" 
+                [(ngModel)]="userDetails.userName"
                 name="firstname"
                 required>
         </mat-form-field>
         <mat-form-field class="fullwidth">
             <input matInput placeholder="Email" id="email" type="email"
-                [(ngModel)]="userDetails.email" 
+                [(ngModel)]="userDetails.email"
                 name="email"
                 required>
         </mat-form-field>
         <mat-form-field class="fullwidth">
             <input matInput placeholder="Contact Number" id="contactNo" type="number"
-                [(ngModel)]="userDetails.contactNo" 
+                [(ngModel)]="userDetails.contactNo"
                 name="contactNo"
                 required>
         </mat-form-field>
         <mat-form-field class="fullwidth">
             <input matInput placeholder="Password" id="password" type="password"
-                [(ngModel)]="userDetails.password" 
+                [(ngModel)]="userDetails.password"
                 name="password"
                 required>
         </mat-form-field>
         <mat-form-field class="fullwidth">
-            <input matInput placeholder="Date Of Birth" id="dob" 
-                [(ngModel)]="userDetails.dob" 
+            <input matInput placeholder="Date Of Birth" id="dob"
+                [(ngModel)]="userDetails.dob"
                 name="dob"
                 required>
         </mat-form-field>
