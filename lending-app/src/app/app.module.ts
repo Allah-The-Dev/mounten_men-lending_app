@@ -21,6 +21,7 @@ import { SignUpDialogComponent } from './home-nav-bar/sign-up-dialog/sign-up-dia
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material';
 import { FormsModule }   from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { FormsModule }   from '@angular/forms';
     MatCardModule,
     MatDialogModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
