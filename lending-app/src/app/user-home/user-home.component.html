@@ -1,0 +1,54 @@
+<div >
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Mounten Men Finance</span>
+      <span class="menu-spacer" style="margin-left: auto;"></span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div>
+
+<mat-card class="example-card margin-class" routerLink = "/home">
+  <mat-card-header>
+    <mat-card-title>View Loan</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="https://www.bbva.com/wp-content/uploads/en/2017/09/Credit-Lines-Vs-Loans-1024x410.png" alt="View loan">
+  <mat-card-content>
+    <p>
+      View the loans that you have applied for in the past. Check their status and repay the pending ones.
+    </p>
+  </mat-card-content>
+</mat-card>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Apply for Loan</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="https://tantso.com/wp-content/uploads/2019/07/difference-between-subsidized-and-unsubsidized-loans-1-640x300.jpg" alt="Apply for loan">
+  <mat-card-content>
+    <p>
+      Let us help you begin or promote your business. Lets embark on this wonderful journey together.
+    </p>
+  </mat-card-content>
+</mat-card>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Complete KYC</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+    Fill in the details so that we can know you better.
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

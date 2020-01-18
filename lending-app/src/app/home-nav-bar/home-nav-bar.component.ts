@@ -21,6 +21,7 @@ export class HomeNavBarComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.maxWidth = '40vw';
+    dialogConfig.maxHeight = '70vh';
     const dialogRef = this.dialog.open(SignUpDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
       this.userService.createUser(result);
