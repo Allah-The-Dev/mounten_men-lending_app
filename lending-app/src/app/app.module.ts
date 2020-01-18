@@ -15,6 +15,8 @@ import { MatToolbarModule,
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeContentComponent } from './home-content/home-content.component';
 import { UserHomeComponent } from './user-home/user-home.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminHomeNavBarComponent } from './admin-home-nav-bar/admin-home-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { UserHomeComponent } from './user-home/user-home.component';
     HomeComponent,
     HomeNavBarComponent,
     HomeContentComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    AdminHomeComponent,
+    AdminHomeNavBarComponent
   ],
   imports: [
     BrowserModule,
