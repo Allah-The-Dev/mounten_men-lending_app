@@ -5,16 +5,34 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeNavBarComponent } from './home-nav-bar/home-nav-bar.component';
+import { MatToolbarModule, 
+    MatSidenavModule, 
+    MatListModule, 
+    MatButtonModule, 
+    MatIconModule,
+    MatCardModule } from "@angular/material";
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { HomeContentComponent } from './home-content/home-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    HomeNavBarComponent,
+    HomeContentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
