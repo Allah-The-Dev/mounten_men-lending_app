@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>Hi {{data.name}}</h1>
+<div mat-dialog-content>
+    <form class="formwidth" (ngSubmit)="onSubmit()" #signUpForm="ngForm">
+        <mat-form-field class="fullwidth">
+            <input matInput placeholder="Full Name" id="userName" type="text"
+                [(ngModel)]="userDetails.userName" 
+                name="firstname">
+        </mat-form-field>
+        <mat-form-field class="fullwidth">
+            <input matInput placeholder="Email" id="email" type="email"
+                [(ngModel)]="userDetails.email" name="email">
+        </mat-form-field>
+        <mat-form-field class="fullwidth">
+            <input matInput placeholder="Contact Number" id="contactNo" type="number"
+                [(ngModel)]="userDetails.contactNo" name="contactNo">
+        </mat-form-field>
+        <mat-form-field class="fullwidth">
+            <input matInput placeholder="Password" id="password" type="password"
+                [(ngModel)]="userDetails.password" name="password">
+        </mat-form-field>
+        <mat-form-field class="fullwidth">
+            <input matInput placeholder="Date Of Birth" id="dob" 
+                [(ngModel)]="userDetails.dob" name="dob">
+        </mat-form-field>
+        <p>
+            <button type="submit" md-raised-button
+                [disabled]="!signUpForm.form.valid">Submit</button>
+        </p>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button cdkFocusInitial>Sign Up</button>
+  </div>
