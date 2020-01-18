@@ -21,6 +21,5 @@ export class UserService {
       }),
       observe: 'response'
     });
-    throw new Error("Method not implemented.");
   }
 }
