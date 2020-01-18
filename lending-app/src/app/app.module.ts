@@ -31,7 +31,7 @@ import { FormsModule }   from '@angular/forms';
     HomeContentComponent,
     UserHomeComponent,
     AdminHomeComponent,
-    AdminHomeNavBarComponent
+    AdminHomeNavBarComponent,
     SignUpDialogComponent
   ],
   imports: [
