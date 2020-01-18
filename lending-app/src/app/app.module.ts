@@ -25,6 +25,7 @@ import { MatInputModule } from '@angular/material';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoanApplicationComponent } from './loan-application/loan-application.component';
+import { LoginDialogComponent } from './home-nav-bar/login-dialog/login-dialog.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { LoanApplicationComponent } from './loan-application/loan-application.co
     AdminHomeNavBarComponent,
     SignUpDialogComponent,
     SignUpConfirmationComponent,
-    LoanApplicationComponent
+    LoanApplicationComponent,
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,

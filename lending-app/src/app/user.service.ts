@@ -22,4 +22,14 @@ export class UserService {
       observe: 'response'
     });
   }
+
+  userLogin(loginDetails: any): Observable<HttpResponse<any>> {
+    const loginUrl = `{this.apiUrl}/user/login`
+    return this.httpClient.post<any>(loginUrl,loginDetails,{
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      }),
+      observe: 'response'
+    });
+  }
 }
