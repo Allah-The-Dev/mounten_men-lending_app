@@ -1,1 +1,68 @@
-<p>loan-application works!</p>
+<div fxLayout="column">
+    <div style="height: 100%;width: 100%;">
+        <mat-card class="example-card">
+            <mat-card-title>Loan Application Form</mat-card-title>
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+            </mat-card-header>
+            <mat-card-content>
+                <form class="formwidth" (ngSubmit)="onSubmit()" #signInForm="ngForm">
+                <table class="fullwidth" cellspacing="0">
+                    <tr>
+                        <td>
+                        <mat-form-field class="fullwidth">
+                            <input matInput placeholder="Email" id="userEmail" type="text"
+                                [(ngModel)]="loanDetails.email"
+                                name="email"
+                                required>
+                        </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <mat-form-field class="fullwidth">
+                            <input matInput placeholder="Buiseness Type" id="buisnessType" type="buisnessType"
+                                [(ngModel)]="loanDetails.buisnessType"
+                                name="email"
+                                required>
+                        </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <mat-form-field class="fullwidth">
+                            <button mat-button color="primary" type="button" 
+                                (click)="checkLoanEligibility()">Check Eligibility</button>
+                        </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <mat-form-field class="fullwidth">
+                            <input matInput placeholder="Loan Amount" id="loanAmount" type="number"
+                                [(ngModel)]="loanDetails.loanAmount"
+                                name="loanAmount"
+                                required>
+                        </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <mat-form-field class="fullwidth">
+                            <input matInput placeholder="Time Duration" id="timeDuration" type="number"
+                                [(ngModel)]="loanDetails.timeDuration"
+                                name="timeDuration"
+                                required>
+                        </mat-form-field>
+                        </td>
+                    </tr>
+                    </table>
+                    <button mat-button color="primary" type="submit" 
+                        (click)="onNoClick()"
+                        [disabled]="signInForm.form.invalid">Apply For Loan</button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+   

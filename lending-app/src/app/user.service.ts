@@ -32,4 +32,15 @@ export class UserService {
       observe: 'response'
     });
   }
+
+  checkEligibility(loanDetails): Observable<HttpResponse<any>> {
+    const loginUrl = `{this.apiUrl}/user/login`
+    return this.httpClient.post<any>(loginUrl,loanDetails,{
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      }),
+      observe: 'response'
+    });
+  }
+  
 }

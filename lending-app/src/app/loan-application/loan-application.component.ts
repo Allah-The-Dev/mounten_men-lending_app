@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoanDetails } from '../models/loan-details';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-loan-application',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoanApplicationComponent implements OnInit {
 
-  constructor() { }
+  loanDetails = new LoanDetails();
+
+  constructor(private userService : UserService) { }
 
   ngOnInit() {
+  }
+
+  checkLoanEligibility(){
+    this.userService.checkEligibility(this.loanDetails).subscribe();
   }
 
 }
