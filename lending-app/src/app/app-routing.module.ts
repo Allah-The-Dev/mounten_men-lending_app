@@ -5,17 +5,16 @@ import { HomeComponent } from './home/home.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { LoanApplicationComponent } from './loan-application/loan-application.component';
+import { UserKycComponent } from './user-kyc/user-kyc.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'admin-home', component: AdminHomeComponent },
-  { path: 'user/:name', component: UserHomeComponent,
-    children: [
-      { path: 'apply-loan', component: LoanApplicationComponent }
-    ]
-  }
+  { path: 'user/:name', component: UserHomeComponent},
+  { path: 'apply-loan', component: LoanApplicationComponent },
+  { path: 'user-kyc', component: UserKycComponent}
 ];
 
 @NgModule({

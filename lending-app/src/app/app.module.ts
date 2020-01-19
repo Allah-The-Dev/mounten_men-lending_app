@@ -26,6 +26,7 @@ import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoanApplicationComponent } from './loan-application/loan-application.component';
 import { LoginDialogComponent } from './home-nav-bar/login-dialog/login-dialog.component';
+import { UserKycComponent } from './user-kyc/user-kyc.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { LoginDialogComponent } from './home-nav-bar/login-dialog/login-dialog.c
     SignUpDialogComponent,
     SignUpConfirmationComponent,
     LoanApplicationComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    UserKycComponent
   ],
   imports: [
     BrowserModule,
