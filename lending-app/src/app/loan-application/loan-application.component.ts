@@ -19,5 +19,8 @@ export class LoanApplicationComponent implements OnInit {
   checkLoanEligibility(){
     this.userService.checkEligibility(this.loanDetails).subscribe();
   }
+  onSubmit(){
+    console.log("form submitted");
+  }
 
 }
