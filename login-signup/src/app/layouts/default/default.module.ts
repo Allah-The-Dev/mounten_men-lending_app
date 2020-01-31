@@ -10,6 +10,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FullwidthComponent } from '../fullwidth/fullwidth.component';
 import { LoginComponent } from '../../modules/login/login.component';
+import { AppMaterialModule } from '../../app-material.module';
+import { LoginFormComponent } from '../../modules/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,18 @@ import { LoginComponent } from '../../modules/login/login.component';
     HomeComponent,
     PostsComponent,
     FullwidthComponent,
-    LoginComponent
+    LoginComponent,
+    LoginFormComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    AppMaterialModule,
+  ],
+  entryComponents: [
+    LoginFormComponent
   ]
 })
 export class DefaultModule { }
