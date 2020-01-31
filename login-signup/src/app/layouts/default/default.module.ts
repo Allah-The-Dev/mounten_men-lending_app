@@ -8,12 +8,16 @@ import { PostsComponent } from '../../modules/posts/posts.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FullwidthComponent } from '../fullwidth/fullwidth.component';
+import { LoginComponent } from '../../modules/login/login.component';
 
 @NgModule({
   declarations: [
     DefaultComponent,
     HomeComponent,
-    PostsComponent
+    PostsComponent,
+    FullwidthComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
