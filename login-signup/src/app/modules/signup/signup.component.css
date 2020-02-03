@@ -1,0 +1,8 @@
+.signUpFormContainer{
+  width: 50vw;
+}
+
+mat-form-field, .signupActionContainer {
+  margin-left: 2.5rem;
+  width: calc(100% - 2.5rem);
+}

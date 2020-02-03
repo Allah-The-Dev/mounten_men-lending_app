@@ -11,7 +11,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { FullwidthComponent } from '../fullwidth/fullwidth.component';
 import { LoginComponent } from '../../modules/login/login.component';
 import { AppMaterialModule } from '../../app-material.module';
-import { LoginFormComponent } from '../../modules/login-form/login-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SignupComponent } from '../../modules/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { LoginFormComponent } from '../../modules/login-form/login-form.componen
     PostsComponent,
     FullwidthComponent,
     LoginComponent,
-    LoginFormComponent,
+    SignupComponent,
   ],
   imports: [
     CommonModule,
@@ -28,9 +30,10 @@ import { LoginFormComponent } from '../../modules/login-form/login-form.componen
     FlexLayoutModule,
     SharedModule,
     AppMaterialModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   entryComponents: [
-    LoginFormComponent
   ]
 })
 export class DefaultModule { }
