@@ -1,6 +1,6 @@
-<div fxLayout="column">
-  <app-header fxLayout="column"></app-header>
-  <div fxLayout="row">
+<div fxLayout="column" class="defaultLayoutContainer">
+  <app-header fxFlex="15" fxLayout="column"></app-header>
+  <div  fxFlex="65" fxLayout="row">
     <div fxFlex="20">
       <app-sidebar fxFlex></app-sidebar>
     </div>
@@ -8,5 +8,5 @@
       <router-outlet></router-outlet>
     </div>
   </div>
-  <app-footer fxLayout="column"></app-footer>
+  <app-footer fxFlex="20" fxLayout="column"></app-footer>
 </div>

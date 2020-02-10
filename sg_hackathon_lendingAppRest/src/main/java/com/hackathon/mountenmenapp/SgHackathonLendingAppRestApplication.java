@@ -1,4 +1,4 @@
-package com.hackathon_sg.sg_hackathon_lendingAppRest;
+package com.hackathon.mountenmenapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -26,16 +26,20 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
 
+  get signupFormControls() {
+    return this.signupForm.controls;
+  }
+
   submitSignupForm() {
     console.log(this.signupForm);
+
+    if (this.signupForm.invalid) {return; }
+
+
   }
 
   closeSignupDialog() {
     this.matDialogRef.close();
-  }
-
-  getFullNameErrorMessage() {
-    return 'sfraf';
   }
 
 }
