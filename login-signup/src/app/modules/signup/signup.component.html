@@ -16,10 +16,10 @@
     <mat-form-field appearance="outline" fxFlex>
       <mat-label>Email Id</mat-label>
       <input matInput placeholder="AbcXyz@gmail.com" type="text"
-        formControlName="emailId"
+        formControlName="email"
         required>
       <mat-hint>Enter your email id</mat-hint>
-      <mat-error *ngIf="signupFormControls.emailId.invalid && signupFormControls.emailId.errors.required">
+      <mat-error *ngIf="signupFormControls.email.invalid && signupFormControls.email.errors.required">
         Email Id is required!
       </mat-error>
     </mat-form-field>
@@ -27,10 +27,10 @@
     <mat-form-field appearance="outline" fxFlex>
       <mat-label>Contact Number</mat-label>
       <input matInput placeholder="9200321232" type="text"
-        formControlName="contactNumber"
+        formControlName="contactNo"
         required>
       <mat-hint>Enter your contact number</mat-hint>
-      <mat-error *ngIf="signupFormControls.contactNumber.invalid && signupFormControls.contactNumber.errors.required">
+      <mat-error *ngIf="signupFormControls.contactNo.invalid && signupFormControls.contactNo.errors.required">
         Contact Number is required!
       </mat-error>
     </mat-form-field>

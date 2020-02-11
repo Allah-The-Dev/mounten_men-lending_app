@@ -13,8 +13,8 @@ export class SignupComponent implements OnInit {
 
   signupForm = this.fb.group({
     fullName: ['', Validators.required],
-    emailId: ['', Validators.required],
-    contactNumber: ['', Validators.required],
+    email: ['', Validators.required],
+    contactNo: ['', Validators.required],
     dob: ['', Validators.required],
     password: ['', Validators.required],
     confirmPassword: ['', Validators.required]
@@ -40,12 +40,13 @@ export class SignupComponent implements OnInit {
     this.userService.createUser(this.signupForm.value).subscribe(
       response => {
         console.log(response);
-        this.matDialogRef.close();
       },
       error => {
         console.log(error);
       },
-      () => {}
+      () => {
+        this.matDialogRef.close();
+      }
     );
 
   }
