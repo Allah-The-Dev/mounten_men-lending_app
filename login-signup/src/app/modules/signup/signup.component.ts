@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-signup',
@@ -21,7 +22,8 @@ export class SignupComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private matDialogRef: MatDialogRef<LoginComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: any)  { }
+              @Inject(MAT_DIALOG_DATA) public data: any,
+              private userService: UserService)  { }
 
   ngOnInit() {
   }
@@ -31,10 +33,20 @@ export class SignupComponent implements OnInit {
   }
 
   submitSignupForm() {
-    console.log(this.signupForm);
+    console.log(this.signupForm.value);
 
     if (this.signupForm.invalid) {return; }
 
+    this.userService.createUser(this.signupForm.value).subscribe(
+      response => {
+        console.log(response);
+        this.matDialogRef.close();
+      },
+      error => {
+        console.log(error);
+      },
+      () => {}
+    );
 
   }
 

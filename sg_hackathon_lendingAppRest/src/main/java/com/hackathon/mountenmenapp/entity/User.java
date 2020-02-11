@@ -1,6 +1,6 @@
 package com.hackathon.mountenmenapp.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,15 +15,15 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="USER")
+@Table(name="User")
 public class User {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Id", nullable = false)
 	private int userId;
 
-	@Column(name="User_Name",length = 50, nullable = false)
-	private String userName;
+	@Column(name="Full_Name",length = 50, nullable = false)
+	private String fullName;
 
 	@Column(name="Email",length = 50, nullable = false)
 	private String email;

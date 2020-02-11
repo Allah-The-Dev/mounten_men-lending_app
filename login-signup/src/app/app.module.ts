@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { DefaultModule } from './layouts/default/default.module';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+
+import {UserService} from './user.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,10 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     FlexLayoutModule,
     DefaultModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
