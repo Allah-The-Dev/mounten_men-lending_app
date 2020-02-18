@@ -1,6 +1,5 @@
 package com.hackathon.mountenmenapp.service.impl;
 
-import java.util.Collection;
 import java.util.Optional;
 
 import com.hackathon.mountenmenapp.entity.MyUserDetails;
@@ -9,7 +8,6 @@ import com.hackathon.mountenmenapp.repository.UserRepository;
 import com.hackathon.mountenmenapp.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
