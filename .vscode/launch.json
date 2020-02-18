@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SgHackathonLendingAppRestApplication<sg_hackathon_lendingAppRest>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.hackathon.mountenmenapp.SgHackathonLendingAppRestApplication",
+            "projectName": "sg_hackathon_lendingAppRest",
+            "args": ""
+        }
+    ]
+}
