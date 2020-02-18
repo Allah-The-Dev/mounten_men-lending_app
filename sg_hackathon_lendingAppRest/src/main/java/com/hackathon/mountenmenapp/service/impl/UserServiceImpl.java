@@ -1,7 +1,8 @@
-package com.hackathon.mountenmenapp.service;
+package com.hackathon.mountenmenapp.service.impl;
 
 import com.hackathon.mountenmenapp.entity.User;
 import com.hackathon.mountenmenapp.repository.UserRepository;
+import com.hackathon.mountenmenapp.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
