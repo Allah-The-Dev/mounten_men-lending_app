@@ -22,8 +22,8 @@ public class User {
     @Column(name = "Id", nullable = false)
 	private int userId;
 
-	@Column(name="Full_Name",length = 50, nullable = false)
-	private String fullName;
+	@Column(name="User_Name",length = 50, nullable = false)
+	private String username;
 
 	@Column(name="Email",length = 50, nullable = false)
 	private String email;

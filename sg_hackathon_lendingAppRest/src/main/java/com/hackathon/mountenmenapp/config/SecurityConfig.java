@@ -1,6 +1,5 @@
 package com.hackathon.mountenmenapp.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,19 +27,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-    @Autowired
-    public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
+    @Override
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService)
                 .passwordEncoder(encoder());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .csrf().disable()
-                .anonymous().disable()
-                .authorizeRequests()
-                .antMatchers("/api-docs/**").permitAll();
+        http.csrf().disable()
+            .anonymous().disable()
+            .authorizeRequests()
+            .antMatchers("/api-docs/**").permitAll()
+            .antMatchers("/admin").hasRole("ADMIN")
+            .antMatchers("/user").hasAnyRole("ADMIN","USER")
+            .antMatchers("/").permitAll()
+            .and().formLogin();
     }
 
     @Bean
