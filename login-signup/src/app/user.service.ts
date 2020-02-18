@@ -8,7 +8,7 @@ import {HttpClient, HttpResponse, HttpHeaders} from '@angular/common/http';
 })
 export class UserService {
 
-  restUrl = 'http://localhost:8080';
+  restUrl = 'http://localhost:8080/mountenment-rest';
 
   constructor(private httpClient: HttpClient) { }
 

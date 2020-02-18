@@ -6,7 +6,7 @@
 *
 ***********************************************************************************************/
 
-package com.hackathon.mountenmenapp;
+package com.hackathon.mountenmenapp.config;
 
 import java.io.IOException;
 
