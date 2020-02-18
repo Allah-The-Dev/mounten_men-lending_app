@@ -18,6 +18,9 @@ import javax.annotation.Resource;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private static final String ADMIN = "ADMIN";
+    private static final String USER = "USER";
+
     @Resource(name = "userService")
     private UserDetailsService userDetailsService;
 
@@ -39,8 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .anonymous().disable()
             .authorizeRequests()
             .antMatchers("/api-docs/**").permitAll()
-            .antMatchers("/admin").hasRole("ADMIN")
-            .antMatchers("/user").hasAnyRole("ADMIN","USER")
+            .antMatchers("/admin").hasRole(USER)
+            .antMatchers("/user").hasAnyRole(ADMIN,USER)
             .antMatchers("/").permitAll()
             .and().formLogin();
     }

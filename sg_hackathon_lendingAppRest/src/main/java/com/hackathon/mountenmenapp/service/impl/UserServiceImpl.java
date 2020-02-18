@@ -1,7 +1,9 @@
 package com.hackathon.mountenmenapp.service.impl;
 
 import java.util.Collection;
+import java.util.Optional;
 
+import com.hackathon.mountenmenapp.entity.MyUserDetails;
 import com.hackathon.mountenmenapp.entity.User;
 import com.hackathon.mountenmenapp.repository.UserRepository;
 import com.hackathon.mountenmenapp.service.UserService;
@@ -26,16 +28,10 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
-        if (user == null) {
-            throw new UsernameNotFoundException("Invalid username or password.");
-        }
-        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
-                getAuthority());
-    }
-
-    private Collection<? extends GrantedAuthority> getAuthority() {
-        return null;
+        Optional<User> user = userRepository.findByUsername(username);
+        
+        return user.map(MyUserDetails::new)
+            .orElseThrow(() -> new UsernameNotFoundException("Not Found: " + username));
     }
 
 }
