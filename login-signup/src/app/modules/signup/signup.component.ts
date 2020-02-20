@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
   });
 
   constructor(private fb: FormBuilder,
-              private matDialogRef: MatDialogRef<LoginComponent>,
+              private matDialogRef: MatDialogRef<SignupComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
               private userService: UserService)  { }
 

@@ -26,7 +26,7 @@ import { SignupComponent } from '../modules/signup/signup.component';
     FooterComponent
   ],
   entryComponents: [
-    SignupComponent
+    SignupComponent, LoginComponent
   ]
 })
 export class SharedModule { }

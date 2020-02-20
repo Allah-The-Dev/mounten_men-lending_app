@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.annotation.Resource;
 
@@ -37,11 +38,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-            .antMatchers("/oauth/authorize**", "/login**", "/error**")
-                .permitAll()
+                .antMatchers("/oauth/**", "/login**", "/error**").permitAll()
             .and()
                 .authorizeRequests()
-                .anyRequest().authenticated()
             .and()
                 .formLogin().permitAll();
     }
@@ -52,7 +51,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public BCryptPasswordEncoder encoder(){
-        return new BCryptPasswordEncoder();
+    public MyPasswordEncoder encoder(){
+        return new MyPasswordEncoder();
     }
+}
+
+class MyPasswordEncoder implements PasswordEncoder{
+
+    @Override
+    public String encode(CharSequence rawPassword) {
+        return rawPassword.toString();
+    }
+
+    @Override
+    public boolean matches(CharSequence rawPassword, String encodedPassword) {
+        return rawPassword.toString().equals(encodedPassword);
+    }
+
 }

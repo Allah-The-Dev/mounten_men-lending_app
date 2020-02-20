@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Login Form</h1>
+<div mat-dialog-content class="signUpFormContainer">
+  <form fxLayout="column" fxLayoutAlign="space-around center"
+    [formGroup]="loginForm" (ngSubmit)="submitLoginForm()">
+
+    <mat-form-field appearance="outline" fxFlex>
+      <mat-label>User Name</mat-label>
+      <input matInput placeholder="Abc Xyz" type="text"
+        formControlName="username">
+      <mat-hint>Enter your user name</mat-hint>
+        <mat-error *ngIf="loginFormControls.username.invalid && loginFormControls.username.errors.required">
+          Full Name is required!
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" fxFlex>
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="abc123@kjf" type="password"
+        formControlName="password"
+        required>
+      <mat-hint>Enter password</mat-hint>
+      <mat-error *ngIf="loginFormControls.password.invalid && loginFormControls.password.errors.required">
+        Full Name is required!
+      </mat-error>
+    </mat-form-field>
+
+    <div fxFlex *ngIf="loginForm.invalid">
+      <p style="background-color: red;">Please fill all the details!!</p>
+    </div>
+    <div mat-dialog-actions fxFlex fxLayout="row" fxLayoutAlign="end center" class="signupActionContainer">
+      <button mat-raised-button (click)="closeLoginFormDialog()">Cancel</button>
+      <button type="submit" mat-raised-button
+        color="primary"
+        cdkFocusInitial>Submit</button>
+    </div>
+  </form>
+</div>
