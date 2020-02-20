@@ -12,7 +12,7 @@ import { UserService } from '../../user.service';
 export class SignupComponent implements OnInit {
 
   signupForm = this.fb.group({
-    fullName: ['', Validators.required],
+    username: ['', Validators.required],
     email: ['', Validators.required],
     contactNo: ['', Validators.required],
     dob: ['', Validators.required],

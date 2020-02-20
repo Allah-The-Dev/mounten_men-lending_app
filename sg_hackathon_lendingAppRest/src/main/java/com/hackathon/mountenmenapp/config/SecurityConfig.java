@@ -19,9 +19,6 @@ import javax.annotation.Resource;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private static final String ADMIN = "ADMIN";
-    private static final String USER = "USER";
-
     @Resource(name = "userService")
     private UserDetailsService userDetailsService;
 
@@ -39,20 +36,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.anonymous().disable()
-            .authorizeRequests()
-            .antMatchers("/api-docs/**").permitAll()
-            .antMatchers("/admin").hasRole(ADMIN)
-            .antMatchers("/user").hasAnyRole(ADMIN,USER)
-            .and().formLogin().permitAll();
-
-        http.csrf().disable();
-        http.headers().frameOptions().disable();
+        http.authorizeRequests()
+            .antMatchers("/oauth/authorize**", "/login**", "/error**")
+                .permitAll()
+            .and()
+                .authorizeRequests()
+                .anyRequest().authenticated()
+            .and()
+                .formLogin().permitAll();
     }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/mountenmen-api/h2-console/**");
+        web.ignoring().antMatchers("/h2/**","/user/signup");
     }
 
     @Bean

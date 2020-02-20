@@ -47,7 +47,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	public void configure(ClientDetailsServiceConfigurer configurer) throws Exception {
 
 		configurer
-				.inMemory()
+			.inMemory()
 				.withClient(CLIEN_ID)
 				.secret(CLIENT_SECRET)
 				.authorizedGrantTypes(GRANT_TYPE_PASSWORD, AUTHORIZATION_CODE, REFRESH_TOKEN, IMPLICIT )

@@ -8,7 +8,7 @@ import {HttpClient, HttpResponse, HttpHeaders} from '@angular/common/http';
 })
 export class UserService {
 
-  restUrl = 'http://localhost:8080/mountenment-rest';
+  restUrl = 'http://localhost:9090';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,7 +18,7 @@ export class UserService {
       .set('content-Type', 'application/json');
 
     return this.httpClient.post<User>(
-      `${this.restUrl}/user`, newUserDetails, {headers: requestHeaders, observe: 'response'}
+      `${this.restUrl}/user/signup`, newUserDetails, {headers: requestHeaders, observe: 'response'}
     );
   }
 }
