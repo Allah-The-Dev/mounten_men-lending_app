@@ -1,5 +1,7 @@
 <p>admin-dashboard works!</p>
 
 <mat-list role="list">
-  <mat-list-item role="listitem">Item 1</mat-list-item>
+  <mat-list-item *ngFor="let user of userList">
+    <a matLine href="#">{{ user.username }}</a>
+ </mat-list-item>
 </mat-list>

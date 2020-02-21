@@ -9,13 +9,13 @@ import { UserService } from 'src/app/user.service';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  userList: User[];
+  userList: any;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.userService.getUsersList().subscribe(
-      data => console.log(data)
+      data => this.userList = data
     );
   }
 
