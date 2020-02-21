@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { User } from './models/user';
 import {HttpClient, HttpResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import { LoginFormData } from './models/LoginFormData';
+import {map} from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +27,7 @@ export class UserService {
     );
   }
 
-  getOauthToken(loginFormData: LoginFormData): Observable<HttpResponse<any>>{
+  getOauthToken(loginFormData: LoginFormData): Observable<any>{
     const requestHeaders = new HttpHeaders()
       .set('Content-type','application/x-www-form-urlencoded')
       .set('Authorization','Basic '+ btoa(this.REST_CLIENT_ID+':'+this.REST_CLIENT_SECRET));
@@ -36,7 +38,9 @@ export class UserService {
       .set('grant_type', 'password');
 
     return this.httpClient.post(
-      `${this.RESTURL}/oauth/token`, requestBody, {headers: requestHeaders, observe: 'response'}
+      `${this.RESTURL}/oauth/token`, requestBody, {headers: requestHeaders, observe: 'body'}
+    ).pipe(
+      map(res => res.json())
     );
   }
 }

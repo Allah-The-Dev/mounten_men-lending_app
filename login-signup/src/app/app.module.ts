@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import {UserService} from './user.service';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {UserService} from './user.service';
     FlexLayoutModule,
     DefaultModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
