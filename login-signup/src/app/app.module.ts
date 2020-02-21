@@ -21,8 +21,7 @@ import { AdminModule } from './admin/admin.module';
     FlexLayoutModule,
     DefaultModule,
     SharedModule,
-    HttpClientModule,
-    AdminModule
+    HttpClientModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

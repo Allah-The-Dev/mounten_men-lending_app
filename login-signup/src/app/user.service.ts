@@ -39,8 +39,6 @@ export class UserService {
 
     return this.httpClient.post(
       `${this.RESTURL}/oauth/token`, requestBody, {headers: requestHeaders, observe: 'body'}
-    ).pipe(
-      map(res => res.json())
     );
   }
 }

@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
 
     this.userService.getOauthToken(this.loginForm.value).subscribe(
       response => {
-        console.log(response);
+        this.saveAccessTokenInBrowserSession(response)
       },
       error => {
         console.log(error);
@@ -45,6 +45,11 @@ export class LoginComponent implements OnInit {
         this.matDialogRef.close();
       }
     );
+  }
+
+  saveAccessTokenInBrowserSession(oauthTokenData){
+    window.sessionStorage.setItem('token', JSON.stringify(oauthTokenData));
+    console.log(window.sessionStorage.getItem('token'));
   }
 
 }
