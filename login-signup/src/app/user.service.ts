@@ -4,6 +4,7 @@ import { User } from './models/user';
 import {HttpClient, HttpResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import { LoginFormData } from './models/LoginFormData';
 import {map} from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -15,7 +16,7 @@ export class UserService {
   REST_CLIENT_ID = "mountenmen-client";
   REST_CLIENT_SECRET ="secret";
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   createUser(newUserDetails: User): Observable<HttpResponse<User>> {
 
@@ -40,5 +41,20 @@ export class UserService {
     return this.httpClient.post(
       `${this.RESTURL}/oauth/token`, requestBody, {headers: requestHeaders, observe: 'body'}
     );
+  }
+
+  doLogout() {
+    window.sessionStorage.removeItem('token');
+    console.log(window.sessionStorage.getItem('token'))
+    this.router.navigate(['/']);
+  }
+
+  checkLogin(){
+    if(window.sessionStorage.getItem('token') && JSON.parse(window.sessionStorage.getItem('token')).access_token){
+      return true;
+    }
+
+    this.router.navigate(['/']);
+    return false;
   }
 }

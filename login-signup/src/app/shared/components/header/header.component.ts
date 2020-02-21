@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { LoginComponent } from 'src/app/modules/login/login.component';
 import { SignupComponent } from 'src/app/modules/signup/signup.component';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { SignupComponent } from 'src/app/modules/signup/signup.component';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private matDialog: MatDialog) { }
+  constructor(private matDialog: MatDialog, private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -33,4 +34,9 @@ export class HeaderComponent implements OnInit {
     this.matDialog.open(LoginComponent, MAT_DIALOG_CONFIG);
   }
 
+  checkLogin(){
+    this.userService.checkLogin();
+  }
 }
+
+
