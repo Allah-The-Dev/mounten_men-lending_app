@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor() { }
+  userList: User[];
+
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.getUsersList().subscribe(
+      data => console.log(data)
+    );
   }
 
 }

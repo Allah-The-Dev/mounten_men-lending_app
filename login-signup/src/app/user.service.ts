@@ -45,7 +45,6 @@ export class UserService {
 
   doLogout() {
     window.sessionStorage.removeItem('token');
-    console.log(window.sessionStorage.getItem('token'))
     this.router.navigate(['/']);
   }
 
@@ -56,5 +55,16 @@ export class UserService {
 
     this.router.navigate(['/']);
     return false;
+  }
+
+  getUsersList() {
+
+    const requestHeaders = new HttpHeaders()
+      .set('Content-type','application/x-www-form-urlencoded')
+      .set('Authorization','Basic '+ JSON.parse(window.sessionStorage.getItem('token')).access_token);
+
+    return this.httpClient.get(
+      `${this.RESTURL}/admin/userlist`,{headers: requestHeaders}
+    )
   }
 }

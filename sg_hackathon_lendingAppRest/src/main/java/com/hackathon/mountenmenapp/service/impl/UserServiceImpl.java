@@ -1,5 +1,6 @@
 package com.hackathon.mountenmenapp.service.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.hackathon.mountenmenapp.entity.MyUserDetails;
@@ -27,9 +28,13 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = userRepository.findByUsername(username);
-        
-        return user.map(MyUserDetails::new)
-            .orElseThrow(() -> new UsernameNotFoundException("Not Found: " + username));
+
+        return user.map(MyUserDetails::new).orElseThrow(() -> new UsernameNotFoundException("Not Found: " + username));
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 
 }
