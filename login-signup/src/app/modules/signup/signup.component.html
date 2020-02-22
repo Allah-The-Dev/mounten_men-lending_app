@@ -53,7 +53,7 @@
         required>
       <mat-hint>Enter password</mat-hint>
       <mat-error *ngIf="signupFormControls.password.invalid && signupFormControls.password.errors.required">
-        Full Name is required!
+        Password is required!
       </mat-error>
     </mat-form-field>
 
@@ -64,7 +64,7 @@
         required>
       <mat-hint>Enter password again</mat-hint>
       <mat-error *ngIf="signupFormControls.confirmPassword.invalid && signupFormControls.confirmPassword.errors.required">
-        Full Name is required!
+        Password is required!
       </mat-error>
     </mat-form-field>
     <div fxFlex *ngIf="signupForm.invalid">

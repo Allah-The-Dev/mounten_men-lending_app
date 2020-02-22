@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from './models/user';
 import {HttpClient, HttpResponse, HttpHeaders, HttpParams} from '@angular/common/http';
-import { LoginFormData } from './models/LoginFormData';
+import { LoginFormData } from './models/loginformdata';
 import {map} from 'rxjs/operators';
 import { Router } from '@angular/router';
 

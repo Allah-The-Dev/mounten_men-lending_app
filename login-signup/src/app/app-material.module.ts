@@ -6,19 +6,25 @@ import {
   MatInputModule,
   MatButtonModule,
   MatDialogModule,
-  MatListModule} from '@angular/material';
+  MatListModule,
+  MatToolbarModule,
+  MatSidenavModule,
+  MatIconModule} from '@angular/material';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
   ],
-  exports: [
+  exports: [        
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
-    MatListModule
+    MatListModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
   ]
 })
 export class AppMaterialModule { }
