@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdminFooterComponent } from './admin-footer.component';
 
-describe('AdminFooterComponent', () => {
+xdescribe('AdminFooterComponent', () => {
   let component: AdminFooterComponent;
   let fixture: ComponentFixture<AdminFooterComponent>;
 
