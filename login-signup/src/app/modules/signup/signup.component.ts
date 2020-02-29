@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { LoginComponent } from '../login/login.component';
 import { UserService } from '../../user.service';
 
 @Component({
