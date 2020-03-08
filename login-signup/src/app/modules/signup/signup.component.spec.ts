@@ -1,14 +1,27 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignupComponent } from './signup.component';
+import {AppMaterialModule} from '../../app-material.module';
+import {ReactiveFormsModule} from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
-xdescribe('SignupComponent', () => {
+describe('SignupComponent', () => {
   let component: SignupComponent;
   let fixture: ComponentFixture<SignupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SignupComponent ]
+      declarations: [ SignupComponent ],
+      imports: [
+        AppMaterialModule,
+        ReactiveFormsModule,
+        HttpClientTestingModule
+      ],
+      providers: [
+        {provide: MAT_DIALOG_DATA, useValue: {}},
+        {provide: MatDialogRef, useValue: {}}
+      ]
     })
     .compileComponents();
   }));
